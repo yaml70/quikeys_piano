@@ -23,10 +23,10 @@ def outline_black_key_patch(log_image, inspection_y, inspection_x):
 
 
 def draw_connected_components(components_indices, components_matrix, im_shape, title, steps_log):
-    cc_rgb = np.zeros(im_shape, dtype=np.int)
+    cc_rgb = np.zeros(im_shape, dtype=int)
     for c_idx in components_indices:
         y_locations, x_locations = np.where(components_matrix == c_idx)
-        cc_rgb[y_locations, x_locations, :] = np.random.randint(0, 255, size=(3, ), dtype=np.int)
+        cc_rgb[y_locations, x_locations, :] = np.random.randint(0, 255, size=(3, ), dtype=int)
     steps_log.append((title, cc_rgb))
 
 
